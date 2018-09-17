@@ -1,0 +1,36 @@
+ADD NEW AUTO_INCREMENT PRIMARY KEY TO THE EXISTING TABLE:
+	alter table kajol add id int not null unique auto_increment primary 		key;
+
+MODIFY COLUMN DATATYPE TO THE EXISTING TABLE:
+	alter table kajol modify column id int not null auto_increment;
+
+MODIFY/RENAME COLUMN NAME TO THE EXISTING TABLE:
+	alter table kajol change user_id id int not null auto_increment;
+
+GROUP BY:
+	It returns how many records belongs to this condition
+	(suppose from india there are 5 customers and usa has 10 it will 		display no of users)
+	ex: select count(id), country from country_tbl group by country;
+
+HAVING:
+	where determines specific result and having determines group of 	result set.
+	ex: select count(number), number from kajol group by number having 		count(number)>1;
+	note:having only can be used with groupby
+
+EXIST:
+	exist return all data if condition exists otherwise it will return 		empty set.
+	ex:select number from kajol where exists (select number from kajol 		where number=12345 and firstname='tom');
+
+ANY/ALL:
+	it will return all data if our cond match with any one record
+	but all return all data if our cond match with each and every 		records of our specified column else return empty set
+	ex: select number from kajol where number = any (select number from 		kajol where number=12345);
+
+FOREIGN KEY:
+
+	create table state (state_id int not null unique 		   		auto_increment,country_id int not null,state_name varchar(60) not 		null,primary key (state_id),foreign key (country_id) references 	country(country_id));
+
+
+import database using commandline
+	mysql> use db_name;
+	mysql> source file_name.sql;

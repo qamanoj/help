@@ -1,0 +1,14 @@
+create project folder inside var/www/html
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+
+<VirtualHost *:80>
+ServerName muvi.com
+DocumentRoot /var/www/html/muvi
+</VirtualHost>
+
+sudo nano /etc/hosts
+127.0.0.1   muvi.com
+
+sudo systemctl restart apache2.service
+

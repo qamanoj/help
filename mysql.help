@@ -1,0 +1,19 @@
+mysql help---------
+service mysql status
+service mysql start
+service mysql stop
+ctrl c to close prog
+sudo mysql -u root -p
+exit to close prog
+
+
+
+
+
+apache help---
+
+sudo systemctl start apache2.service
+sudo systemctl stop apache2.service
+sudo systemctl restart apache2.service
+
+
