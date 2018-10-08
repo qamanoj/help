@@ -21,7 +21,7 @@ pip install django-import-export
           return super(RegistrationOTPResource, self).get_queryset(request).select_related('country')
 
 
-    class RegistrationOTPAdmin(ExportMixin, admin.ModelAdmin):
+    class RegistrationOTPAdmin(ImportExportModelAdmin, admin.ModelAdmin):
       list_display = ('id', 'phone_number', 'otp', 'created_date', 'is_verified', )
       list_filter = ('is_verified', ('created_date', DateRangeFilter))
       search_fields = ('id', 'phone_number', 'otp')
