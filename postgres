@@ -1,0 +1,7 @@
+  953  sudo apt-get update
+  954  sudo apt-get install postgresql
+  955  service postgresql start'
+  957  service postgresql start
+  961  sudo service postgresql status
+  969  psql
+  970  sudo -u postgres psql
